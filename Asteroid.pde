@@ -1,42 +1,45 @@
-//your variable declarations here
-Spaceship sal = new Spaceship();
-Star[] fred = new Star[300]; //creates array of 300 stars
-public void setup() 
+class Asteroid extends Floater
 {
-  size(500, 500);
+  private double rotSpeed;
   
-  for(int i = 0; i < fred.length; i++) //creates each star
+  public Asteroid() 
   {
-    if(i % 10 == 0) {
-      fred[i] = new BigRedStar();
-    }
-    else {
-    fred[i] = new Star();
-    }
-  }
-}
-public void draw() 
-{
-  background(0);
-  sal.show();
-  sal.move();
-  for (int i = 0; i < fred.length; i++) //shows each star
+    rotSpeed = (Math.random() * 2) - 1;
+    corners = 6;
+    xCorners = new int[corners];   
+    yCorners = new int[corners];
+    xCorners[0] = -11;
+    yCorners[0] = -8;
+    xCorners[1] = 7;
+    yCorners[1] = -8;
+    xCorners[2] = 13;
+    yCorners[2] = 0;
+    xCorners[3] = 6;
+    yCorners[3] = 10;
+    xCorners[4] = -11;
+    yCorners[4] = 8;
+    xCorners[5] = -5;
+    yCorners[5] = 0;
+    myColor = color(133, 135, 144);
+    myCenterX = Math.random() * 500;
+    myCenterY = Math.random() * 500;
+    myXspeed = myYspeed = (Math.random() *2) - 1;
+    rotSpeed = (Math.random() * 15) - 7;
+    myPointDirection = (int)(Math.random() * 360);
+  } 
+  public void move()
   {
-  fred[i].show();
+    turn(rotSpeed);
+    super.move();
   }
-}
-public void keyPressed() 
-{
-  if (key == '4') {
-    sal.turn(-5);
+  public double getX()
+  {
+    return myCenterX;
   }
-  else if (key == '6') {
-    sal.turn(5);
+  public double getY()
+  {
+    return myCenterY;
   }
-  else if(key == '5') {
-    sal.accelerate(0.4);
-  }
-  else if(key == 'h') {
-    sal.hyperspace();
-}
-}
+ 
+}  
+
