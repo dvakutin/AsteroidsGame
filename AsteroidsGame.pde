@@ -40,11 +40,11 @@ public void draw()
   float c = (float)rick.get(j).getX();
   float e = (float)rick.get(j).getY();
   //float d = dist((float)sal.getX(), (float)sal.getY(), (float)rick.get(j).getX(), (float)rick.get(j).getY()); 
-  float d = dist(a, b, c, e);
-  if(d < 20.0)
-  {
-    rick.remove(j);
-  }
+  //float d = dist(a, b, c, e);
+  //if(d < 20)
+  //{
+   // rick.remove(j);
+  //}
   }
 }
 public void keyPressed() 
