@@ -34,7 +34,7 @@ public void draw()
   for (int j = 0; j < rick.size(); j++) //shows each asteroid
   {
   //rick.get(j).show();
-  rick.get(j).move();
+  //rick.get(j).move();
   float a = (float)sal.getX();
   float b = (float)sal.getY();
   float c = (float)rick.get(j).getX();
