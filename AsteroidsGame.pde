@@ -1,7 +1,6 @@
 //your variable declarations here
 Spaceship sal = new Spaceship();
 Star[] fred = new Star[300]; //creates array of 300 stars
-ArrayList <Asteroid> rick = new ArrayList <Asteroid>(); //defines ArrayList named rick
 public void setup() 
 {
   size(500, 500);
@@ -15,11 +14,6 @@ public void setup()
     fred[i] = new Star();
     }
   }
-//  for(int j = 0; j < 15; j++) //15 means 15 Asteroids (aka vasya)
-//  {
-//    Asteroid vasya = new Asteroid(); //creates new object: vasya, type Asteroid
-//    rick.add(vasya); // adds vasya to ArrayList called rick
-//  }
 }
 public void draw() 
 {
