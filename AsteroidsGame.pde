@@ -41,7 +41,7 @@ public void draw()
   float e = (float)rick.get(j).getY();
   //float d = dist((float)sal.getX(), (float)sal.getY(), (float)rick.get(j).getX(), (float)rick.get(j).getY()); 
   float d = dist(a, b, c, e);
-  if(d < 20)
+  if(d < 20.0)
   {
     rick.remove(j);
   }
