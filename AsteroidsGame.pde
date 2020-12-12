@@ -35,6 +35,16 @@ public void draw()
   {
   rick.get(j).show();
   rick.get(j).move();
+  float a = (float)sal.getX();
+  float b = (float)sal.getY();
+  float c = (float)rick.get(j).getX();
+  float e = (float)rick.get(j).getY();
+  //float d = dist((float)sal.getX(), (float)sal.getY(), (float)rick.get(j).getX(), (float)rick.get(j).getY()); 
+  float d = dist(a, b, c, e);
+  if(d < 20)
+  {
+    rick.remove(j);
+  }
   }
 }
 public void keyPressed() 
