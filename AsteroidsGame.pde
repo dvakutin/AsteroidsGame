@@ -1,4 +1,5 @@
 //your variable declarations here
+//ArrayList <Bullet> bull = new ArrayList <Bullet>();
 Spaceship sal = new Spaceship();
 Star[] fred = new Star[300]; //creates array of 300 stars
 ArrayList <Asteroid> rick = new ArrayList <Asteroid>(); //defines ArrayList named rick
@@ -17,7 +18,7 @@ public void setup()
   }
   for(int j = 0; j < 15; j++) //15 means 15 Asteroids (aka vasya)
   {
-    rick.add(new Asteroid());
+     rick.add(new Asteroid());  
   }
 }
 public void draw() 
@@ -29,13 +30,28 @@ public void draw()
   {
   fred[i].show();
   }
+  for (int j = 0; j < rick.size(); j++) //shows each asteroid
+  {
+  rick.get(j).show();
+  rick.get(j).move();
+  float a = (float)sal.getX();
+  float b = (float)sal.getY();
+  float c = (float)rick.get(j).getX();
+  float e = (float)rick.get(j).getY();
+  //float d = dist((float)sal.getX(), (float)sal.getY(), (float)rick.get(j).getX(), (float)rick.get(j).getY()); 
+  float d = dist(a, b, c, e);
+  if(d < 20)
+  {
+    rick.remove(j);
+  }
+  }
 }
 public void keyPressed() 
 {
   if (key == '4') {
     sal.turn(-5);
   }
-  else if (key == '6') {
+  else if(key == '6') {
     sal.turn(5);
   }
   else if(key == '5') {
@@ -43,5 +59,5 @@ public void keyPressed()
   }
   else if(key == 'h') {
     sal.hyperspace();
-}
+  }
 }
