@@ -31,8 +31,8 @@ public void draw()
   {
   fred[i].show();
   }
-  for (int j = 0; j < rick.size(); j++) //shows each asteroid
-  {
+//  for (int j = 0; j < rick.size(); j++) //shows each asteroid
+//  {
   //rick.get(j).show();
   //rick.get(j).move();
   float a = (float)sal.getX();
@@ -45,7 +45,7 @@ public void draw()
   //{
    // rick.remove(j);
   //}
-  }
+ // }
 }
 public void keyPressed() 
 {
