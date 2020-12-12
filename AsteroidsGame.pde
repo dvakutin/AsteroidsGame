@@ -19,7 +19,6 @@ public void setup()
   {
     Asteroid vasya = new Asteroid(); //creates new object: vasya, type Asteroid
     rick.add(vasya); // adds vasya to ArrayList called rick
-    
   }
 }
 public void draw() 
