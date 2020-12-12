@@ -31,6 +31,16 @@ public void draw()
   {
   fred[i].show();
   }
+  for (int j = 0; j < rick.size(); j++) //shows each asteroid
+  {
+  rick.get(j).show();
+  rick.get(j).move();
+  float d = dist((float)sal.getX(), (float)sal.getY(), (float)rick.get(j).getX(), (float)rick.get(j).getY()); 
+  if(d < 20)
+  {
+    rick.remove(j);
+  }
+  }
 }
 public void keyPressed() 
 {
