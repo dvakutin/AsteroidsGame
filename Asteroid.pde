@@ -41,5 +41,5 @@ class Asteroid extends Floater
     return myCenterY;
   }
  
-}  
+}    
 
