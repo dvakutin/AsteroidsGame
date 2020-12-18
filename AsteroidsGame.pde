@@ -31,7 +31,7 @@ public void setup()
 public void draw() 
 {
   background(0);
-  int m = millis();
+  int m = (int)millis();
   noStroke();
   int minutes = ((int)m / (int)60000);
   int seconds = (int)m / (int)1000;
