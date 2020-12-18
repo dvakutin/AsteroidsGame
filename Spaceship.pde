@@ -31,7 +31,7 @@ class Spaceship extends Floater
   xCorners[12] = -16;
   yCorners[12] = -6;
   myColor = color(0, 85, 255); //color of spaceship 
-  myCenterX = myCenterY = 250; //holds center coordinates   
+  myCenterX = myCenterY = 350; //holds center coordinates   
   myXspeed = myYspeed = 0; //holds the speed of travel in the x and y directions   
   myPointDirection = (int)(Math.random() * 360);
   }
