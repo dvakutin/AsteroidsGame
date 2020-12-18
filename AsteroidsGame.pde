@@ -33,19 +33,19 @@ public void draw()
   background(0);
   //int m = millis();
   //noStroke();
-  //int minutes = m / 60000;
+  //int minutes = (m / 60000);
   //int seconds = m / 1000;
   //int milliseconds = m - ((60000 * minutes) + (1000 * seconds));
   //if(minutes >= 1)
   //{
-    //seconds = seconds - (60 * minutes);
-    //milliseconds = m - ((1000 * seconds) + (60000 * minutes));
+  //  seconds = seconds - (60 * minutes);
+  //  milliseconds = m - ((1000 * seconds) + (60000 * minutes));
   //}
   //fill(m % 255); // what does this do?
   //rect(450, 50, 200, 50);
   //textFont(Arial);
   //fill(255, 255, 255);
-  //text(minutes + ":", + seconds + ":" + milliseconds, 550, 30);
+  //text(minutes + ":" + seconds + ":" + milliseconds, 550, 30);
 
   sal.show();
   sal.move();
@@ -60,12 +60,7 @@ public void draw()
   {
   rick.get(j).show();
   rick.get(j).move();
-  //float a = (float)sal.getX();
-  //float b = (float)sal.getY();
-  //float c = (float)rick.get(j).getX();
-  //float e = (float)rick.get(j).getY();
   float d = dist((float)sal.getX(), (float)sal.getY(), (float)rick.get(j).getX(), (float)rick.get(j).getY()); 
-  //float d = dist(a, b, c, e);
   if(d < 20)
   {
     rick.remove(j);
@@ -75,9 +70,10 @@ public void draw()
     text("Health: " + healthscore, 30, 30);
   }
   }
+  //System.out.println(bull.size());
   if(bull.size() > 0)
   {
-    for(int n = 0; n < bull.size() - 1; n++)
+    for(int n = 0; n < bull.size(); n++)
     {
       bull.get(n).show();
       bull.get(n).accelerate(0.1);
@@ -85,11 +81,20 @@ public void draw()
     if(bull.get(n).getbullX() >= 700 || bull.get(n).getbullX() <= 0)
     {
       bull.remove(n);
+      if(bull.size() == n)
+      {
+        break;
+      }
     }
     if(bull.get(n).getbullY() >= 700 || bull.get(n).getbullY() <= 0)
     {
       bull.remove(n);
+      if(bull.size() == n)
+      {
+        break;
+      }
     }
+    
     }
   }
   for(int n = 0; n < bull.size(); n++)
@@ -101,6 +106,10 @@ public void draw()
       {
         rick.remove(j);
         bull.remove(n);
+        if(bull.size() == n)
+      {
+        break;
+      }
         healthscore = healthscore + 1;
         text("Health: " + healthscore, 30, 30);
         break;
@@ -134,8 +143,8 @@ public void keyPressed()
   else if(key == 'h') {
     sal.hyperspace();
   }
- // int n = 0;
   if(key == ' ') {       
-    bull.add(new Bullet(sal));   
+       bull.add(new Bullet(sal)); 
+       //System.out.println(bull.size());
   }
 }
