@@ -46,8 +46,8 @@ public void draw()
   textFont(Arial);
   fill(255, 255, 255);
   text(minutes + ":", 550, 30); //+ seconds + ":" + milliseconds, 550, 30);
-  text(seconds + ":", 550, 40);
-  text(milliseconds + ":", 550, 50);
+  text(seconds + ":", 550, 100);
+  text(milliseconds + ":", 550, 250);
 
   sal.show();
   sal.move();
