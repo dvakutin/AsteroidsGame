@@ -31,23 +31,21 @@ public void setup()
 public void draw() 
 {
   background(0);
-  int m = millis();
-  noStroke();
-  int minutes = m / 60000;
-  int seconds = m / 1000;
-  int milliseconds = m - ((60000 * minutes) + (1000 * seconds));
-  if(minutes >= 1)
-  {
-    seconds = seconds - (60 * minutes);
-    milliseconds = m - ((1000 * seconds) + (60000 * minutes));
-  }
+  //int m = millis();
+  //noStroke();
+  //int minutes = m / 60000;
+  //int seconds = m / 1000;
+  //int milliseconds = m - ((60000 * minutes) + (1000 * seconds));
+  //if(minutes >= 1)
+  //{
+    //seconds = seconds - (60 * minutes);
+    //milliseconds = m - ((1000 * seconds) + (60000 * minutes));
+  //}
   //fill(m % 255); // what does this do?
   //rect(450, 50, 200, 50);
-  textFont(Arial);
-  fill(255, 255, 255);
-  text(minutes + ":", 550, 30); //+ seconds + ":" + milliseconds, 550, 30);
-  text(seconds + ":", 550, 100);
-  text(milliseconds + ":", 550, 250);
+  //textFont(Arial);
+  //fill(255, 255, 255);
+  //text(minutes + ":", + seconds + ":" + milliseconds, 550, 30);
 
   sal.show();
   sal.move();
