@@ -31,21 +31,21 @@ public void setup()
 public void draw() 
 {
   background(0);
-  //int m = millis();
-  //noStroke();
-  //int minutes = (m / 60000);
-  //int seconds = m / 1000;
-  //int milliseconds = m - ((60000 * minutes) + (1000 * seconds));
-  //if(minutes >= 1)
-  //{
-  //  seconds = seconds - (60 * minutes);
-  //  milliseconds = m - ((1000 * seconds) + (60000 * minutes));
-  //}
+  int m = millis();
+  noStroke();
+  int minutes = ((int)m / (int)60000);
+  int seconds = (int)m / (int)1000;
+  int milliseconds = m - ((60000 * minutes) + (1000 * seconds));
+  if(minutes >= 1)
+  {
+    seconds = seconds - (60 * minutes);
+    milliseconds = m - ((1000 * seconds) + (60000 * minutes));
+  }
   //fill(m % 255); // what does this do?
   //rect(450, 50, 200, 50);
-  //textFont(Arial);
-  //fill(255, 255, 255);
-  //text(minutes + ":" + seconds + ":" + milliseconds, 550, 30);
+  textFont(Arial);
+  fill(255, 255, 255);
+  text(minutes + ":" + seconds + ":" + milliseconds, 550, 30);
 
   sal.show();
   sal.move();
@@ -71,7 +71,7 @@ public void draw()
   }
   }
   //System.out.println(bull.size());
-  if(bull.size() > 0)
+  //if(bull.size() > 0)
   {
     for(int n = 0; n < bull.size(); n++)
     {
@@ -81,18 +81,12 @@ public void draw()
     if(bull.get(n).getbullX() >= 700 || bull.get(n).getbullX() <= 0)
     {
       bull.remove(n);
-      if(bull.size() == n)
-      {
-        break;
-      }
+      break;
     }
     if(bull.get(n).getbullY() >= 700 || bull.get(n).getbullY() <= 0)
     {
       bull.remove(n);
-      if(bull.size() == n)
-      {
-        break;
-      }
+      break;  
     }
     
     }
@@ -106,10 +100,6 @@ public void draw()
       {
         rick.remove(j);
         bull.remove(n);
-        if(bull.size() == n)
-      {
-        break;
-      }
         healthscore = healthscore + 1;
         text("Health: " + healthscore, 30, 30);
         break;
